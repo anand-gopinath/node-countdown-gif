@@ -25,7 +25,7 @@ These trigger a download. Change the URL from `/generate` to `/serve` when used 
 
 Tested with and designed for:
 
-* node 6.0.0
+* node 10.0.0
 * cairo 1.8.6
 
 ## License
