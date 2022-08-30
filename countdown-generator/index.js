@@ -134,7 +134,7 @@ module.exports = {
                 seconds = (seconds.toString().length == 1) ? '0' + seconds : seconds;
                 
                 // build the date string
-                let string = [days, 'd ', hours, 'h ', minutes, 'm ', seconds, 's'].join('');
+                let string = [days, ' ', hours, ' ', minutes, ' ', seconds, ' '].join('');
                 
                 // paint BG
                 ctx.fillStyle = this.bg;
@@ -143,7 +143,16 @@ module.exports = {
                 // paint text
                 ctx.fillStyle = this.textColor;
                 ctx.fillText(string, this.halfWidth, this.halfHeight);
-                
+                let textfont = Math.floor(this.width / 20) + 'px';
+
+                // ctx.font = ['15px', 'Courier New'].join(' ');
+                ctx.font = [textfont, fontFamily].join(' ');
+                ctx.fillText('D', 130, this.halfHeight+45);
+                ctx.fillText('H', 200, this.halfHeight+45);
+                ctx.fillText('M', 270, this.halfHeight+45);
+                ctx.fillText('S', 345, this.halfHeight+45);
+                ctx.font = [fontSize, fontFamily].join(' ');
+
                 // add finalised frame to the gif
                 enc.addFrame(ctx);
                 

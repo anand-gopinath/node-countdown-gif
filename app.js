@@ -62,7 +62,7 @@ app.get('/serve', function (req, res) {
     
     timezone = timezone || 'UTC';
     const key = req.query.key || 'default'; 
-    const width = "400", height =  "80";
+    const width = "500", height =  "150";
 
     CountdownGenerator.init(end_date, end_time, timezone, width, height, color, bg, key, frames, () => {
         let filePath = tmpDir + key + '.gif';
